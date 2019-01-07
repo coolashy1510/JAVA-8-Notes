@@ -80,4 +80,198 @@ ASCI Code --->
 
    	- a constant value which can be assigned to a variable
 
+For Integral data types:
+ Decimal (Base-10) ====> 0-9 --- Eg: int x=12;
+ Octal (Base-7) ====> 0-7 --- Eg: int x=012; (prefix with 0)
+ Hexa Decimal (Base-16) ====> 0-9, a-f/A-F --- Eg: int x=0x10; (prefix with 0x or 0X) [can be lower of uppercase]
+ 
+For Floating Data types:
+ Decimal (Base-10) ====> 0-9 --- Eg: double d = 123.456
+ No octal and hexa decimal 
+ Exponential Form - 
+ 	double d = 1.2e3;  ( 1.2 x 10^3 )
+ 	float ff = 1.2e3f;
 
+***ARRAYS***
+An array is an indexed collection of fixed number of homogeneous data elements.
+
+1 dimensional:
+eg: 
+int[] x; ---- recommended for readability
+int x[];
+int []x;
+int x   [];
+
+2 dimensional:
+eg:
+int[][] x;
+int  [][]x;
+int x [][];
+int[] x[];
+int []  []x;
+int   []x[];
+
+3 dimensional:
+int[][][] x;
+all possible combinations are allowed.
+
+Max array size in Java - long datatype length
+
+---- classname@hashcode_in_hexadecimalForm ----
+int[] x = {1,2,3,4,5};
+length() = 
+length = int[], double[], String[]
+length() = String buffer and builder. String related objects
+
+Anonymous arrays: arrays for instant use. nameless arrays. 
+
+All the wrapper classes implement the interfaces java.io.Serializable and java.lang.Comparable
+
+####Types of Variables:####
+	- primitive variable 
+	- reference variable - to refer objects
+
+		- local variable - inside method, block or constructors. 
+		- static variable - if the value of a variable is not varied from object to object. "static"--> keyword is used
+		- instance variable - object level variables; stored in heap area
+
+	For local variable initialisation is must.
+	For static and instance variable compiler will provide values.
+	Never recommended to initialize local variable inside logical blocks.
+
+Diff b/w instance and static variable:
+- Both will be within the class. But using static keyword we can differentiate the variable.
+
+"class level" means static fields and they can be accessed from anywhere (i.e. static as well as non-static methods) in the class (and from outside the class depending on their accessibility).
+"instance level" means the instance fields and they can be accessed only from instance methods in the class.
+
+1. JVM will be started.
+2. JVM will create and start main thread.
+3. Main thread will search for <SomeName>.class file. --> NoClassDefFoundError
+4. If <SomeName>.class file is available, then it is loaded [static variables will be created]
+5. Execute Main method in the file.
+6. Unload <SomeName>.class file [static variables will be destroyed]
+7. Terminate the main thread.  
+8. JVM will be shutdown.
+
+static --> used in variables, methods and inner classes. cannot make top level classes as static.
+final  --> cannot create child class. no inheritance. class level.
+public --> all other class can access. inheritance concept works here. 
+
+static variables can be accessed from anywhere.
+instance variables will be accessed ly inside instance methods. else we need an object creation to access it. it cannot be accessed directly inside static block
+
+For static methods, method declaration is necessary with body. [static mehtods means class level utility methods. so it needs body declaration.]
+Abstract methods must end with semicolon without body.
+
+***** Parameter Parsing ******
+primitive variable --> method 
+
+public - jvm must be able to call from anywhere;
+static - without any object, the JVM has to call the main method;  
+void   - no return from the method with JVM
+main   - it is the method configured inside JVM.
+
+
+Operators and Assignments:
+-------------------------
+ternary operator - ?:      ===> x=(b)?c:d     (true:false)
+for this number of ? and : must match.
+
+== operator and .equals() method
+== meant for reference/address comparison
+.equals() present inside String is meant for content comparison.
+
+increment and decrement operators:
+---------------------------------
+++x --> pre increment - first increment x and then assign the value
+x++ --> post increment - first assign the value and then increment x
+
+--x --> pre increment - first decrement x and then assign the value
+x-- --> post increment - first assign the value and then decrement x
+
+it is not applicable to boolean datatype. Applicable for all the primitive datatypes.
+
+arithmetic operators: 
+--------------------
+
++,-,*,/ and %
+
+10/0, 0/0 is Arithmetic exception(AE)
+10/0.0 is infinity
+0/0.0 is NaN
+
+AE is applicable only for integral datatypes and not for Floating datatypes - Runtime Exception
+
+String Concatenation Operator: +
+-----------------------------
+Java does not support operator overriding
+
+Relational Operator:
+-------------------
+<,<=,>,>=
+can be applied to any type except boolean.
+nesting of relational operator is not allowed.
+
+Flow Control:
+------------
+
+- Selection statements: among everal available options, pick one option and execute. Eg: If-Else and Switch statements
+- Iterative Statements: while , do-while(), for, for-each statements
+- Transfer statements: break, continue, return, try-catch-finally, assert
+
+	Break: [can be used only in 3 places]
+	- inside switch statements to stop fall through
+	- inside loops to break loop execution based on condition
+	- inside labeled blocks to break block execution
+
+		labelled block: redability purpose; declare inside a method; 
+		instance block: declare inside class directly. will be EXECUTED automatically.
+
+	Continue: [can be used only in 1 place]
+	- Used only inside loops. 
+	- it is used to skip current iteration and continue next iteration.
+
+loop comparison:
+---------------
+
+--> If we dont know the number of iteration in advance then use while loop.
+--> If we want to exexcute loop body atleast once then use do-while loop
+--> If we know the number of iterations in advance then use for loop
+--> To retrive the elements of arrays and collections then we shud use for-each loop.
+
+Java Source File Structure:
+--------------------------
+- import statements
+- package statements:
+- access modifiers (public, protected, default, private)
+- abstract modifier
+- interface
+
+++++ a program can have many classes but If there is a public class, then compulsary, name of the class shud be that filename ++++
+If no public class is there, then the filename name can be anything.
+
+import statements:
+	- use fully qualified names (or) use import statements
+	1. Explicit class import:
+	Eg:
+	 - import java.util.ArrayList;
+
+	2. Implicit Class import:
+	Eg:
+	 - import java.util.*;
+
+	 which are meaningful:
+	 import java.util.ArrayList; - Yes
+	 import java.util.*; - Yes
+	 import java.util.ArrayList.*; -No
+	 import java.util; -No
+
+order of precedence:
+- explicit class import
+- current working directory
+- implicit class import
+
+default packages:
+1. lang package
+2. default package ==> cwd
