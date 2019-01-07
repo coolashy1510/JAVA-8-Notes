@@ -1,4 +1,4 @@
-Java 8 : Preparation towards Certification IZ0 808.
+Java 8 : Preparation towards Certification 1Z0 808.
 
 Duration : 2 1/5 hrs
 No of Questions :70 qns
