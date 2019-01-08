@@ -1,0 +1,20 @@
+- A class can extend only one class at a time
+- An interface can extend any number of interfaces at a time
+- A class can implement any number of interfaces
+- A class can extend another class and can implement any number of instances simultaneously.
+
+A extends B :- A and B can be class or interface
+A extends B,C :- Interfaces
+A implements B,C :- A--> class B,C--> interfaces
+A extends B implements C,D :- A,B --> classes C,D --> interfaces.
+A implements C,D extends B :- Compiler Error (First we should use extends and then only we can use implements)
+
+Inheritance:
+Extends means parent to child. (we are getting something from parent)
+Implements means child to parent. (we have to give something to parent)
+
+Interface methods:
+  - every method present inside an interface is always public and abstract whether we are declaring or not.
+  - if we dont mention anything it is considered as public.
+  
+  
