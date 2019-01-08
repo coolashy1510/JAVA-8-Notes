@@ -1,0 +1,37 @@
+**interface and abstract**
+- interface will have many methods. few could have body and many might be empty methods.
+when we intend to implement an interface in any class, we need to have all the methods again in order to compile. we cannot be specific in implementing the methods.
+- when creating and declaring another class as abstract, we can implement all the methods from the interface class.
+- so now when we can extend the abstract class and use the only required methods despite using all the methods that are un wanted.
+
+abstract vs final:
+- final method we cant override; abstract we can override.
+- we cant create child class for final class; we cant create child class but in the implementation we should have implementation
+
+- If a class extends an abstract class, then we need to implement all the abstract methods in the abstract class.
+- An abstract class can have zero abstract methods.
+- Abstract class can contain both concrete and abstract methods.
+- final class cannot contain abstract methods
+- abstract can contain final methods.
+
+strictfp - strict floating point
+
+Member Modifiers:
+----------------
+- public
+  can be accessed from anywhere. the classes must also be public
+- default
+  within the current package
+- private
+  we can access only within the current class.
+  abstract methods can never be private
+- protected
+  we can access within the current/same package anywhere, but if to be accessed from outside package - only in child classes
+  protected = <default>+kids
+  
+  *** Within the same package, we can access the protected member anywhere, within or outside the child class, using child or parent references. 
+  *** But protected members from outside packages available only in the child classes can be accessed only by the child references.
+  
+  
+  
+  

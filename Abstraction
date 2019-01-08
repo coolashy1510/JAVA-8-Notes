@@ -1,6 +1,0 @@
-**interface and abstract:**
-- interface will have many methods. few could have body and many might be empty methods.
-when we intend to implement an interface in any class, we need to have all the methods again in order to compile. we cannot be specific in implementing the methods.
-- when creating and declaring another class as abstract, we can implement all the methods from the interface class.
-- so now when we can extend the abstract class and use the only required methods despite using all the methods that are un wanted.
-
