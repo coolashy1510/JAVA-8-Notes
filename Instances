@@ -1,3 +1,9 @@
+Interface: Any requirement specification
+
+Implementing an interface:
+ - we shud implement every method, or declare it as abstract.
+ - we must have methods as public.
+
 - A class can extend only one class at a time
 - An interface can extend any number of interfaces at a time
 - A class can implement any number of interfaces
@@ -17,4 +23,13 @@ Interface methods:
   - every method present inside an interface is always public and abstract whether we are declaring or not.
   - if we dont mention anything it is considered as public.
   
-  
+Interface variables:
+  - REQUIREMENT LEVEL CONSTANTS.
+  - every variable present inside interface, is always public, static and final [[all together too]]
+  - we need to perform initialisiation as they are static and final. Eg: int x = 10;
+
+Interface naming conflicts:
+# If two interface methods contain same method signature with same return type, then one method implementation is enough.
+# If two interface methods contain same method signature with same return type, and if we need different implementation, then we need to have different classes implementing the interfaces.
+# 2 interfaces, same name and different argument types, we need to provide different implementations -> overloaded methods.
+# 
