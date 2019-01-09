@@ -1,5 +1,21 @@
 Interface: Any requirement specification
 
+- any service requirement specification is an interface.
+	  example JDBC API (interface - requirement specification) --> implemented by --> Oracle driver, MySQL driver, DB2 Driver 
+	- it acts as a contract between client and service provider.
+	- from 1.8 we can have default methods with implementation; we can have static methods inside the interface.
+	- interface keyword.
+	- shud end with semicolon ;
+ 
+ extends and implements:
+	''''''''''''''''''''''
+	- a class can extend only one class at a time.
+	- a class can implement any number of interfaces at a time.
+	- a class can extend and implements any number of interfaces at a time.
+	- an interface can extend any number of interfaces at a time.
+
+	Marker interface: an interface without any methods and by implementing that interface if our objects will get some ability then it is called marker 		''''''''''''''''  interface. like for serilizable(I), clonable(I), RandomAccess(I), SingleThreadModel.
+ 
 Implementing an interface:
  - we shud implement every method, or declare it as abstract.
  - we must have methods as public.
@@ -32,4 +48,3 @@ Interface naming conflicts:
 # If two interface methods contain same method signature with same return type, then one method implementation is enough.
 # If two interface methods contain same method signature with same return type, and if we need different implementation, then we need to have different classes implementing the interfaces.
 # 2 interfaces, same name and different argument types, we need to provide different implementations -> overloaded methods.
-# 
