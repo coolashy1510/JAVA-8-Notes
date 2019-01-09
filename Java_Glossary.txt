@@ -275,3 +275,121 @@ order of precedence:
 default packages:
 1. lang package
 2. default package ==> cwd
+
+Whenever we import a package, all classes and interfaces present in the package, by default is available. "BUT NOT SUB PACKAGE CLASSES". If we want to use a sub package class, then we must write an import statement. Eg: Pattern class from regex package. import java.util.regex.*;
+
+In C language #include is loaded statically. In java the import is loaded dynamically.
+
+Package Statements:
+------------------
+it is an encapsulation mechanism to group related things into a single unit.
+
+all classes and interface used for database operation is in ==> java.sql package
+file i/o operations ==> java.io package
+
+adv of package statement:
+ - modularity of application is improved
+ - naming conflicts will be resolved, unique identification
+ - security for the components.
+ 
+--> package statement must be the first non-comment statement in any program. 
+--> there can be only one package statement in any java program
+
+order of statements in a program:
+- package statement
+- import statement
+- class or interface or enum declarations
+
+Class Level Modifiers:
+---------------------
+- public
+- final - not allowed to create child class
+- abstract - object creation is not possible
+
+========================================================
+class Test
+{
+	class inner
+	{
+
+	}
+}
+					Top level class 	inner class 		
+public			-       Yes 				yes
+<default>		- 		Yes 				yes
+private										yes
+protected									yes
+static 										yes
+abstract        - 		Yes 				yes
+strictfp		- 		Yes 				yes
+final 			-		Yes 				yes
+synchronised
+native
+volatile
+transient
+========================================================
+
+** In java there is no access specifier concept but we have only in access modifiers.
+
+public:
+------
+	- this class can be access from anywhere within or outside the package.
+
+default:
+-------
+	- no access modifier attached to a class then it is default modifier.
+	- it is also known as package level access. all classes can be achieved without any further queries.
+
+final:
+-----
+	- it is applicable for classes, methods and variables.
+	- no change in values.
+	- final methods cannot be overridden in child class
+	- if a class is declared as final we cannot create child class.
+	- immutable is aplicable only for object
+	- final is applicable for variable, methods and concepts.
+
+abstract:
+--------
+	- applicable for class and methods and not for variables.
+
+	abstract method: [hiding something]
+					- only declaration but no implementation(no body). it must compulsory end with semi-colon;
+					- the child class that extends the parent class must provide implementation.
+					- it is used for polymorphism purpose.
+					- will not go well with final, synchronized, static, private, strictfp
+
+	abstract class: 
+					- partially implemented abstract methods is called abstract class.
+					- not possible to create an object for abstract class. 
+
+	abstract class vs abstract method:
+		- if a class has atleast one abstract method, then we must declare that class as abstract.
+
+
+protected:
+---------
+	- refer github separate file.
+
+interface:
+---------
+	- any service requirement specification is an interface.
+	  example JDBC API (interface - requirement specification) --> implemented by --> Oracle driver, MySQL driver, DB2 Driver 
+	- it acts as a contract between client and service provider.
+	- from 1.8 we can have default methods with implementation; we can have static methods inside the interface.
+	- interface keyword.
+	- shud end with semicolon ;
+
+	extends and implements:
+	''''''''''''''''''''''
+	- a class can extend only one class at a time.
+	- a class can implement any number of interfaces at a time.
+	- a class can extend and implements any number of interfaces at a time.
+	- an interface can extend any number of interfaces at a time.
+
+	Marker interface: an interface without any methods and by implementing that interface if our objects will get some ability then it is called marker 		''''''''''''''''  interface. like for serilizable(I), clonable(I), RandomAccess(I), SingleThreadModel.
+
+	1.8 version --> 1. default methods - 
+					2. static methods
+
+	stream() method in collection. it is a default method.
