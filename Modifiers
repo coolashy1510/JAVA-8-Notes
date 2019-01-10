@@ -32,6 +32,13 @@ Member Modifiers:
   *** Within the same package, we can access the protected member anywhere, within or outside the child class, using child or parent references. 
   *** But protected members from outside packages available only in the child classes can be accessed only by the child references.
   
+  If the instance and static variable declared as
+  - public, access anywhere
+  - private, within the current class and not outside 
+  - default, within the current package anywhere
+  - protected, within the current package and outside the child class object reference.
+  
+  For local varialbe we can only use final.
   
   
   
