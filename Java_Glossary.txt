@@ -393,3 +393,18 @@ interface:
 					2. static methods
 
 	stream() method in collection. it is a default method.
+	
+Polymorphism interview question:
+
+	Child c = new Child();					Parent p = new Child();
+	------------------------------------------------------------------------------
+Eg:	ArrayList al = new ArrayList();				List l = new ArrayList();
+	1. if we know exact runtime type of object		1. If we dont know exact runtime type of object
+	2. By using AL reference we can hold only AL object	2. By using parent reference we can hold any child object type
+	3. By using chlild reference we can call both parent	3. By this we can call only parent class methods but not child 									  specific methods,coz dono which object will come at runtime
+	and child class methods.
+	
+Polymorphism:
+	Static polymorphism (Overloading/Metod Hiding)		Runtime polymorphism (Overriding)
+	
+	
