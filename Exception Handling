@@ -1,0 +1,10 @@
+
+Runtime exception and its child classes; Error and its child classes are unchecked exceptions.
+
+Checked Exception Rule:
+- if child class throws any checked exception, compulsory the parent class must throw same checked exception or its parent.
+
+Unchecked Exception Rule:
+- no exceptions
+
+
