@@ -1,0 +1,72 @@
+String and StringBuffer:
+  String is immutable (once we create string object we are not allowed to change its content. if done, a new object will only be created)
+  SB is mutable (we can change the content)
+  
+  for string --> concat
+  for StringBuffer --> append
+ 
+  there are 2 memory areas available;
+    - string constant pool,
+    - heap area
+  
+  String s = new String("hello"); --> created in heap area
+  String s = "hello"; --> created in SCP
+  
+  only string literals will be created in SCP area.
+  
+  different ways to create String objects:
+    - String s = new String();
+    - String s = new String(String s1);
+    - String s = new String("HELLO");
+    - String s = new String(STringBuffer sb);
+    - String s = new String(char[] ch);
+    - String s = new String(byte[] b);
+    
+  important methods of String:
+    - charAt(int index)
+    - concat(String s) - '+' is also meant for String concat
+    - equals() --> for password comparison
+    - equalsIgnoreCase() --> for mailid comparison
+    - substring(start,end) --> begin to end-1
+    - substring(start) --> begin to end of string
+    - s.length() --> always returnnumber of characters present in the string
+    - s.length --> for array length.
+    - replace() --> replaces 
+    - toLowerCase()
+    - toUpperCase()
+    - trim() --> remove spaces
+    - indexOf(char ch) --> first occurance
+    - lastIndexOf(char ch) --> last occurance
+    
+   StringBuffer capacity is 16. if it exceeds then (currentcapacity+1)*2
+   when String is passed into SB,then the capacity + String length is added. 
+   
+   important StringBuffer methods:
+   - setCharAt(int index, char c)
+   - append() --> can appaned any type of argument (string, float, boolean, object, etc..). 
+   - insert() --> insert at specified location
+   - delete(int begin, int end) --> begin to end -1
+   - deleteCharAt() --> delete t specified index
+   - reverse()
+   - setLength() --> to delete specified length of string
+   - trimToSize() --> to deallocate extra allocated free space.
+   - ensureCapacity() --> to increase buffer capacity on the fly.
+   
+String buffer: Synchronized --> at a time only one thread is allowed to run. Thread safe.
+-------------
+
+StringBuilder: non-synchronized --> at a time many threads ae allowed to run.
+-------------
+
+String vs StringBuffer vs StringBuilder.
+- if the content is fixed and wont change frequently --> string
+- if the content is not fixed and keep on changing frequently thread safe --> StringBuffer
+- if the content is not fixed and keep on changing frequently but not thread safe --> StringBuilder
+
+
+
+  
+   
+   
+   
+    
